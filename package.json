@@ -1,0 +1,31 @@
+{
+  "name": "whiskey-tasting",
+  "version": "0.0.1",
+  "description": "Backend to handle whiskey tastings",
+  "main": "index.js",
+  "scripts": {
+    "start": "node lib/main.js",
+    "dev": "nodemon src/main.ts",
+    "build": "tsc",
+    "test": "jest --watchAll --collectCoverage"
+  },
+  "author": "Damien Le Dantec <damien-le-dantec@hotmail.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.3",
+    "@types/mongodb": "^4.0.7",
+    "@types/node": "^20.5.1",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.6.2",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
