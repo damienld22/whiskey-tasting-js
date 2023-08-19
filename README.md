@@ -47,7 +47,6 @@ pnpm test
 - [ ] Handle ID of Tasting only on saved data
 - [ ] Error handling
 - [ ] Deploy (Via Github actions ?)
-- [ ] Configuration using environment variables (log level in tests)
 
 ### Optional
 
@@ -56,3 +55,4 @@ pnpm test
 - [ ] VSCode ligatures
 - [ ] Add an authentication
 - [ ] Email sending with weekly reports
+- [ ] Hooks precommit / prepush
