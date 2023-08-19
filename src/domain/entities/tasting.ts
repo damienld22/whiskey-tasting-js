@@ -1,6 +1,8 @@
+export type TastingScore = 1 | 2 | 3 | 4 | 5;
+
 export type Tasting = {
   id: string;
-  score: number,
+  score: TastingScore,
   drinkName: string;
   comment?: string;
 }

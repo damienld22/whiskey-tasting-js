@@ -1,5 +1,6 @@
 import { MongoDBTastingDataSource } from "../../../../data/data-sources/mongodb/mongodb-tasting-data-source";
 import { DatabaseWrapper } from "../../../../data/interfaces/data-sources/database-wrapper"
+import { Tasting } from "../../../../domain/entities/tasting";
 
 describe('MongoDB DataSource', () => {
   let mockDatabase: DatabaseWrapper;
@@ -21,7 +22,7 @@ describe('MongoDB DataSource', () => {
   });
 
   test('create', async () => {
-    const inputData = { id: "1", score: 5, drinkName: "drink" };
+    const inputData = { id: "1", score: 5, drinkName: "drink" } satisfies Tasting;
     const datasource = new MongoDBTastingDataSource(mockDatabase);
     jest.spyOn(mockDatabase, 'insertOne').mockImplementation(() => Promise.resolve({ insertedId: 123 }));
     const result = await datasource.create(inputData);

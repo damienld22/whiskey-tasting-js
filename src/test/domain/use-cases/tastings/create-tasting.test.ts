@@ -20,7 +20,7 @@ describe('Create tasting Use case', () => {
   });
 
   test('should return true', async () => {
-    const inputData = { id: "1", score: 5, drinkName: "drink" }
+    const inputData = { id: "1", score: 5, drinkName: "drink" } satisfies Tasting
     jest.spyOn(mockTastingRepository, 'createTasting').mockImplementation(() => Promise.resolve(true));
     const createTastingUseCase = new CreateTasting(mockTastingRepository);
     const result = await createTastingUseCase.execute(inputData);

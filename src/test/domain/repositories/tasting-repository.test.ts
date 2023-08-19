@@ -24,7 +24,7 @@ describe('Tasting repository', () => {
 
   describe('getTastings', () => {
     test('should return data', async () => {
-      const expectedData = [{ id: "1", score: 5, drinkName: "drink" }];
+      const expectedData = [{ id: "1", score: 5, drinkName: "drink" }] satisfies Tasting[];
       jest.spyOn(mockTastingDataSource, 'getAll').mockImplementation(() => Promise.resolve(expectedData));
       const result = await tastingRepository.getTastings();
       expect(result).toStrictEqual(expectedData);
@@ -33,7 +33,7 @@ describe('Tasting repository', () => {
 
   describe('createTasting', () => {
     test('should return true', async () => {
-      const inputData = { id: "1", score: 5, drinkName: "drink" };
+      const inputData = { id: "1", score: 5, drinkName: "drink" } satisfies Tasting;
       jest.spyOn(mockTastingDataSource, 'create').mockImplementation(() => Promise.resolve(true));
       const result = await tastingRepository.createTasting(inputData);
       expect(mockTastingDataSource.create).toBeCalledTimes(1);
