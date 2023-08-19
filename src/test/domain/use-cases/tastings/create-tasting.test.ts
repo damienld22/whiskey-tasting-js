@@ -1,4 +1,4 @@
-import { Tasting } from "../../../../domain/entities/tasting";
+import { Tasting, TastingForm } from "../../../../domain/entities/tasting";
 import { TastingRepository } from "../../../../domain/interfaces/repositories/tasting-repository";
 import { CreateTasting } from "../../../../domain/use-cases/tastings/create-tasting";
 
@@ -20,7 +20,7 @@ describe('Create tasting Use case', () => {
   });
 
   test('should return true', async () => {
-    const inputData = { id: "1", score: 5, drinkName: "drink" } satisfies Tasting
+    const inputData = { score: 5, drinkName: "drink" } satisfies TastingForm
     jest.spyOn(mockTastingRepository, 'createTasting').mockImplementation(() => Promise.resolve(true));
     const createTastingUseCase = new CreateTasting(mockTastingRepository);
     const result = await createTastingUseCase.execute(inputData);

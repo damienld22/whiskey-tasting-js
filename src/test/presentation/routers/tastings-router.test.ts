@@ -33,7 +33,7 @@ describe('Tastings Router', () => {
 
   describe('GET /tastings', () => {
     test('should return 200 with data', async () => {
-      const expectedData = [{ id: "1", score: 5, drinkName: "drink" }] satisfies Tasting[]
+      const expectedData = [{ _id: "1", score: 5, drinkName: "drink" }] satisfies Tasting[]
       jest.spyOn(mockGetTastingsUseCase, "execute").mockImplementation(() => Promise.resolve(expectedData));
 
       const response = await request(server).get("/tastings");
@@ -54,14 +54,14 @@ describe('Tastings Router', () => {
   describe("POST /tasting", () => {
 
     test("should return 201", async () => {
-      const inputData = { id: "1", score: 5, drinkName: "drink" }
+      const inputData = { score: 5, drinkName: "drink" }
       jest.spyOn(mockCreateTastingUseCase, "execute").mockImplementation(() => Promise.resolve(true))
       const response = await request(server).post("/tastings").send(inputData)
       expect(response.status).toBe(201)
     });
 
     test("POST /tastings returns 500 on use case error", async () => {
-      const inputData = { id: "1", score: 5, drinkName: "drink" }
+      const inputData = { score: 5, drinkName: "drink" }
       jest.spyOn(mockCreateTastingUseCase, "execute").mockImplementation(() => Promise.reject(Error()))
       const response = await request(server).post("/tastings").send(inputData)
       expect(response.status).toBe(500)

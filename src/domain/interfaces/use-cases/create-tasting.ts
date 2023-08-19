@@ -1,5 +1,5 @@
-import { Tasting } from "../../entities/tasting";
+import { TastingForm } from "../../entities/tasting";
 
 export interface CreateTastingUseCase {
-  execute(tasting: Tasting): Promise<boolean>;
+  execute(tasting: TastingForm): Promise<boolean>;
 }

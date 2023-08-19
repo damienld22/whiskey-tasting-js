@@ -1,6 +1,6 @@
-import { Tasting } from "../../entities/tasting";
+import { TastingForm, Tasting } from "../../entities/tasting";
 
 export interface TastingRepository {
-  createTasting(tasting: Tasting): Promise<boolean>;
+  createTasting(tasting: TastingForm): Promise<boolean>;
   getTastings(): Promise<Tasting[]>;
 }

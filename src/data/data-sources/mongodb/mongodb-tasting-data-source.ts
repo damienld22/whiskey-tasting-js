@@ -1,4 +1,4 @@
-import { Tasting } from "../../../domain/entities/tasting";
+import { TastingForm, Tasting } from "../../../domain/entities/tasting";
 import { DatabaseWrapper } from "../../interfaces/data-sources/database-wrapper";
 import { TastingDataSource } from "../../interfaces/data-sources/tasting-data-source";
 
@@ -10,7 +10,7 @@ export class MongoDBTastingDataSource implements TastingDataSource {
     this.database = database;
   }
 
-  async create(tasting: Tasting): Promise<boolean> {
+  async create(tasting: TastingForm): Promise<boolean> {
     const result = await this.database.insertOne(tasting);
     return result !== null;
   }
