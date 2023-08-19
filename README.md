@@ -38,18 +38,21 @@ pnpm test
 
 ## To do
 
+### Mandatory
+
 - [ ] Add all properties of tasting
-- [ ] Logging
-- [ ] Check node formation
-- [ ] Check awesome nodejs
-- [ ] Consider Vite and Vitest for Node
 - [ ] Picture handling
-- [ ] Use Rational Database
 - [ ] Validation des entrants
 - [ ] Add linter + prettier
-- [ ] Define a type for TastingScore
+- [ ] Handle ID of Tasting only on saved data
 - [ ] Error handling
-- [ ] VSCode ligatures
-- [ ] Configuration using environment variables
 - [ ] Deploy (Via Github actions ?)
+- [ ] Configuration using environment variables
+
+### Optional
+
+- [ ] Consider Vite and Vitest for Node
+- [ ] Use Rational Database
+- [ ] VSCode ligatures
 - [ ] Add an authentication
+- [ ] Email sending with weekly reports
