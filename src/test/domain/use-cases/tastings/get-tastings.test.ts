@@ -20,7 +20,7 @@ describe('Get tastings Use case', () => {
   });
 
   test('should return data', async () => {
-    const expectedResult = [{ _id: "1", score: 5, drinkName: "drink" }] satisfies Tasting[]
+    const expectedResult = [{ _id: "1", score: 5, drinkName: "drink" }];
     jest.spyOn(mockTastingRepository, 'getTastings').mockImplementation(() => Promise.resolve(expectedResult));
     const getTastingsUseCase = new GetTastings(mockTastingRepository);
     const result = await getTastingsUseCase.execute();

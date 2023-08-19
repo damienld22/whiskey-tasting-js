@@ -1,10 +1,13 @@
-export type TastingScore = 1 | 2 | 3 | 4 | 5;
+import { z } from 'zod'
 
-export type Tasting = {
-  _id: string;
-  score: TastingScore,
-  drinkName: string;
-  comment?: string;
-}
+export const TastingSchema = z.object({
+  _id: z.string(),
+  score: z.number().int().min(1).lte(5),
+  drinkName: z.string(),
+  comment: z.string().optional()
+})
 
-export type TastingForm = Omit<Tasting, '_id'>;
+export const TastingFormSchema = TastingSchema.omit({ _id: true });
+
+export type Tasting = z.infer<typeof TastingSchema>;
+export type TastingForm = z.infer<typeof TastingFormSchema>;

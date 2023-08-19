@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { GetTastingsUseCase } from '../../interfaces/use-cases/get-tastings';
 import { CreateTastingUseCase } from '../../interfaces/use-cases/create-tasting';
+import { validate } from '../middlewares/validation';
+import { TastingFormSchema } from '../../entities/tasting';
 
 export default function TastingsRouter(
   getTastingsUseCase: GetTastingsUseCase,
@@ -17,7 +19,7 @@ export default function TastingsRouter(
     }
   });
 
-  router.post('/', async (req: Request, res: Response) => {
+  router.post('/', validate(TastingFormSchema), async (req: Request, res: Response) => {
     try {
       await createTastingUseCase.execute(req.body);
       res.status(201).json({ message: "Tasting created" });

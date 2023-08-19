@@ -22,7 +22,7 @@ describe('MongoDB DataSource', () => {
   });
 
   test('create', async () => {
-    const inputData = { score: 5, drinkName: "drink" } satisfies TastingForm;
+    const inputData = { score: 5, drinkName: "drink" };
     const datasource = new MongoDBTastingDataSource(mockDatabase);
     jest.spyOn(mockDatabase, 'insertOne').mockImplementation(() => Promise.resolve({ insertedId: 123 }));
     const result = await datasource.create(inputData);

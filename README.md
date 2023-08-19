@@ -42,7 +42,6 @@ pnpm test
 
 - [ ] Add all properties of tasting
 - [ ] Picture handling
-- [ ] Validation des entrants
 - [ ] Add linter + prettier
 - [ ] Handle ID of Tasting only on saved data
 - [ ] Error handling

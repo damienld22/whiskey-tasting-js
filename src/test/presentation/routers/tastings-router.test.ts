@@ -33,7 +33,7 @@ describe('Tastings Router', () => {
 
   describe('GET /tastings', () => {
     test('should return 200 with data', async () => {
-      const expectedData = [{ _id: "1", score: 5, drinkName: "drink" }] satisfies Tasting[]
+      const expectedData = [{ _id: "1", score: 5, drinkName: "drink" }];
       jest.spyOn(mockGetTastingsUseCase, "execute").mockImplementation(() => Promise.resolve(expectedData));
 
       const response = await request(server).get("/tastings");
