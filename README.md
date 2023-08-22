@@ -40,9 +40,8 @@ pnpm test
 
 ### Mandatory
 
-- [ ] Add all properties of tasting + Picture handling (use form-data)
-- [ ] Handle ID of Tasting only on saved data
-- [ ] Error handling
+- [ ] API Doc
+- [ ] Add front
 - [ ] Deploy (Via Github actions ?)
 
 ### Optional
@@ -52,4 +51,8 @@ pnpm test
 - [ ] VSCode ligatures
 - [ ] Add an authentication
 - [ ] Email sending with weekly reports
-- [ ] Hooks precommit / prepush
+- [ ] More accurancy on Tasting properties
+
+## Ideas
+
+- [ ] Autocomplete to search tastings

@@ -3,6 +3,19 @@ import { GetTastingsUseCase } from '../../interfaces/use-cases/get-tastings';
 import { CreateTastingUseCase } from '../../interfaces/use-cases/create-tasting';
 import { validate } from '../middlewares/validation';
 import { TastingFormSchema } from '../../entities/tasting';
+import multer from 'multer';
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './assets')
+  },
+  filename: function (req, file, cb) {
+    const filename = `${Date.now()}-${file.originalname}`;
+    cb(null, filename)
+  },
+})
+
+const upload = multer({ dest: 'assets/', storage });
 
 export default function TastingsRouter(
   getTastingsUseCase: GetTastingsUseCase,
@@ -27,6 +40,16 @@ export default function TastingsRouter(
       res.status(500).send({ message: 'Error saving tasting' });
     }
   });
+
+  router.post('/picture', async (req: Request, res: Response) => {
+    upload.single('file')(req, res, (err) => {
+      if (err) {
+        res.status(500).send({ message: 'Error uploading picture' });
+      } else {
+        res.status(200).json({ message: 'Picture uploaded', path: req.file?.path });
+      }
+    });
+  })
 
   return router;
 }
