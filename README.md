@@ -1,8 +1,10 @@
 # Whisky tasting
 
-## Start / dev
 
-### Prerequis
+## Server
+### Start / dev
+
+#### Prerequis
 
 Start a Mongodb database instance
 
@@ -22,7 +24,7 @@ To execute dev mode :
 pnpm dev
 ```
 
-## Build
+### Build
 
 ```sh
 pnpm build
@@ -30,7 +32,7 @@ pnpm build
 
 The output directory is `./lib`
 
-## Tests
+### Tests
 
 ```sh
 pnpm test
@@ -40,19 +42,18 @@ pnpm test
 
 ### Mandatory
 
-- [ ] API Doc
 - [ ] Add front
 - [ ] Deploy (Via Github actions ?)
+- [ ] Complete API
 
 ### Optional
 
 - [ ] Consider Vite and Vitest for Node
 - [ ] Use Rational Database
-- [ ] VSCode ligatures
 - [ ] Add an authentication
-- [ ] Email sending with weekly reports
 - [ ] More accurancy on Tasting properties
 
 ## Ideas
 
 - [ ] Autocomplete to search tastings
+- [ ] Email sending with weekly reports

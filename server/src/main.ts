@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 import pino from 'pino-http';
 import 'dotenv/config';
+import cors from 'cors';
 import { DatabaseWrapper } from './data/interfaces/data-sources/database-wrapper';
 import { GetTastings } from './domain/use-cases/tastings/get-tastings';
 import { TastingRepositoryImpl } from './domain/repositories/tasting-repository';
@@ -32,6 +33,10 @@ import { validateEnvVariables } from './config/env-variables';
   );
 
   server.use(logger);
+  server.use(cors({
+    origin: envVariables.ORIGIN
+  }))
   server.use('/tastings', tastingMiddleware);
+
   server.listen(8080, () => console.log('[STARTED] whisky-tasting is running...'));
 })();
