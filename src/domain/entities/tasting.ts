@@ -1,11 +1,11 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
 export const TastingSchema = z.object({
   _id: z.string(),
   score: z.number().int().min(1).lte(5),
   drinkName: z.string(),
-  comment: z.string().optional()
-})
+  comment: z.string().optional(),
+});
 
 export const TastingFormSchema = TastingSchema.omit({ _id: true });
 

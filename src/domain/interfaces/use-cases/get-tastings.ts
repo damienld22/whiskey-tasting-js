@@ -1,4 +1,4 @@
-import { Tasting } from "../../entities/tasting";
+import { Tasting } from '../../entities/tasting';
 
 export interface GetTastingsUseCase {
   execute(): Promise<Tasting[]>;

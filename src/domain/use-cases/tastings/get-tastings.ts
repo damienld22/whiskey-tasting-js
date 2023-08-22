@@ -1,7 +1,6 @@
-import { Tasting } from "../../entities/tasting";
-import { TastingRepository } from "../../interfaces/repositories/tasting-repository";
-import { GetTastingsUseCase } from "../../interfaces/use-cases/get-tastings";
-
+import { Tasting } from '../../entities/tasting';
+import { TastingRepository } from '../../interfaces/repositories/tasting-repository';
+import { GetTastingsUseCase } from '../../interfaces/use-cases/get-tastings';
 
 export class GetTastings implements GetTastingsUseCase {
   tastingRepository: TastingRepository;

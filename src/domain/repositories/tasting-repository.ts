@@ -1,6 +1,6 @@
-import { TastingDataSource } from "../../data/interfaces/data-sources/tasting-data-source";
-import { Tasting } from "../entities/tasting";
-import { TastingRepository } from "../interfaces/repositories/tasting-repository";
+import { TastingDataSource } from '../../data/interfaces/data-sources/tasting-data-source';
+import { Tasting } from '../entities/tasting';
+import { TastingRepository } from '../interfaces/repositories/tasting-repository';
 
 export class TastingRepositoryImpl implements TastingRepository {
   tastingDataSource: TastingDataSource;
@@ -18,5 +18,4 @@ export class TastingRepositoryImpl implements TastingRepository {
     const result = await this.tastingDataSource.getAll();
     return result;
   }
-
 }

@@ -1,9 +1,8 @@
-import { TastingForm, Tasting } from "../../../domain/entities/tasting";
-import { DatabaseWrapper } from "../../interfaces/data-sources/database-wrapper";
-import { TastingDataSource } from "../../interfaces/data-sources/tasting-data-source";
+import { TastingForm, Tasting } from '../../../domain/entities/tasting';
+import { DatabaseWrapper } from '../../interfaces/data-sources/database-wrapper';
+import { TastingDataSource } from '../../interfaces/data-sources/tasting-data-source';
 
 export class MongoDBTastingDataSource implements TastingDataSource {
-
   private database: DatabaseWrapper;
 
   constructor(database: DatabaseWrapper) {

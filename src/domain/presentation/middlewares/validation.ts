@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from "express";
-import { z } from "zod";
+import { NextFunction, Request, Response } from 'express';
+import { z } from 'zod';
 
 export const validate = (schema: z.AnyZodObject | z.ZodOptionalType<z.AnyZodObject>) => {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -14,8 +14,8 @@ export const validate = (schema: z.AnyZodObject | z.ZodOptionalType<z.AnyZodObje
 
       return res.status(400).json({
         status: 'failed',
-        error
-      })
+        error,
+      });
     }
-  }
-}
+  };
+};

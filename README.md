@@ -40,9 +40,7 @@ pnpm test
 
 ### Mandatory
 
-- [ ] Add all properties of tasting
-- [ ] Picture handling
-- [ ] Add linter + prettier
+- [ ] Add all properties of tasting + Picture handling (use form-data)
 - [ ] Handle ID of Tasting only on saved data
 - [ ] Error handling
 - [ ] Deploy (Via Github actions ?)
