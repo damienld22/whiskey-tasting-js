@@ -1,4 +1,4 @@
-import { Tasting } from '../../../../domain/entities/tasting';
+import { Tasting, TastingForm } from '../../../../domain/entities/tasting';
 import { TastingRepository } from '../../../../domain/interfaces/repositories/tasting-repository';
 import { GetTastings } from '../../../../domain/use-cases/tastings/get-tastings';
 
@@ -8,6 +8,12 @@ describe('Get tastings Use case', () => {
       throw new Error('Method not implemented.');
     }
     getTastings(): Promise<Tasting[]> {
+      throw new Error('Method not implemented.');
+    }
+    editTasting(id: string, tasting: Partial<TastingForm>): Promise<boolean> {
+      throw new Error('Method not implemented.');
+    }
+    deleteTasting(id: string): Promise<boolean> {
       throw new Error('Method not implemented.');
     }
   }

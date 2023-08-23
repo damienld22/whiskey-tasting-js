@@ -14,5 +14,7 @@ export const TastingSchema = z.object({
 
 export const TastingFormSchema = TastingSchema.omit({ _id: true });
 
+export const EditTastingFormSchema = TastingFormSchema.partial();
+
 export type Tasting = z.infer<typeof TastingSchema>;
 export type TastingForm = z.infer<typeof TastingFormSchema>;

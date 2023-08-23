@@ -10,6 +10,8 @@ import { CreateTasting } from './domain/use-cases/tastings/create-tasting';
 import TastingsRouter from './domain/presentation/routers/tastings-router';
 import server from './server';
 import { validateEnvVariables } from './config/env-variables';
+import { EditTasting } from './domain/use-cases/tastings/edit-tasting';
+import { DeleteTasting } from './domain/use-cases/tastings/delete-tasting';
 
 (async () => {
   const envVariables = validateEnvVariables(process.env);
@@ -25,11 +27,16 @@ import { validateEnvVariables } from './config/env-variables';
   const tastingDatabase: DatabaseWrapper = {
     find: (query) => db.collection('tastings').find(query).toArray(),
     insertOne: (doc) => db.collection('tastings').insertOne(doc),
+    updateOne: (query, doc) => db.collection('tastings').updateOne(query, { $set: doc }),
+    deleteOne: (query) => db.collection('tastings').deleteOne(query)
   };
 
+  const tastingRepositoryImpl = new TastingRepositoryImpl(new MongoDBTastingDataSource(tastingDatabase));
   const tastingMiddleware = TastingsRouter(
-    new GetTastings(new TastingRepositoryImpl(new MongoDBTastingDataSource(tastingDatabase))),
-    new CreateTasting(new TastingRepositoryImpl(new MongoDBTastingDataSource(tastingDatabase))),
+    new GetTastings(tastingRepositoryImpl),
+    new CreateTasting(tastingRepositoryImpl),
+    new EditTasting(tastingRepositoryImpl),
+    new DeleteTasting(tastingRepositoryImpl)
   );
 
   server.use(logger);

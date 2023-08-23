@@ -1,7 +1,7 @@
 # Whisky tasting
 
-
 ## Server
+
 ### Start / dev
 
 #### Prerequis
@@ -44,7 +44,7 @@ pnpm test
 
 - [ ] Add front
 - [ ] Deploy (Via Github actions ?)
-- [ ] Complete API
+- [ ] pnpm workspaces
 
 ### Optional
 
@@ -52,6 +52,7 @@ pnpm test
 - [ ] Use Rational Database
 - [ ] Add an authentication
 - [ ] More accurancy on Tasting properties
+- [ ] Use turbo
 
 ## Ideas
 
